@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&family=Raleway:ital@0;1&display=swap');
+/* Fonts - 
+    font-family: 'Crimson Pro', serif;
+    font-family: 'Raleway', sans-serif;
+*/
+
+:root {
+    --background: #222;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: 'Raleway', sans-serif;
+    color: #222;
+}
+
+/* nav styles start here */
+
+header {
+    background: var(--background);
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    opacity: 90%;
+}
+
+h1 {
+    font-family: 'Crimson Pro', serif;
+    letter-spacing: .3em;
+    font-weight: 200;
+    text-transform: uppercase;
+    color: white;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 1px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+    top: 7px;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--background);
+    width: 100%;
+    transform: scale(1,0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: .8rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+    color: white
+}
+
+.nav-toggle:checked ~ nav {
+    transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+@media screen and (min-width: 990px) {
+    .nav-toggle-label {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+
+    .logo {
+        grid-column: 2 / 3;
+        margin-left: 4px;
+    }
+
+    nav {
+        all: unset;
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 7px;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li {
+        margin-left: 2em;
+        margin-bottom: 0;
+    }
+
+    nav a {
+        opacity: 1;
+        position: relative;
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 1px;
+        background: white;
+        position: absolute;
+        bottom: -.5em;
+        left: 0;
+        right: 0;
+        transform: scale(0,1);
+        transform-origin: left;
+        transition: transform ease-in-out 250ms;
+    }
+    
+    nav a:hover::before {
+        transform: scale(1,1);
+    }
+}
+
+/* content starts here */
+
+    .home-banner {
+        width: 100%;
+        object-fit: cover;
+        object-position: top center;
+        margin-top: 78.8px;
+    }
+
+    h2 {
+        font-family: 'Crimson Pro', serif;
+        letter-spacing: .2em;
+        font-weight: 200;
+        font-size: 2em;
+        text-transform: uppercase;
+        color: 222;
+        text-align: center;
+    }
+
+    h3 {
+        font-weight: lighter;
+        letter-spacing: .2em;
+    }
+
+    .content {
+        width: 70%;
+        max-width: 700px;
+        margin: auto;
+    }
+    
+    .about_container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /*.about {
+        width: 70%;
+        max-width: 700px;
+        margin: auto;
+        margin-top: 6em;
+    }*/
+
+    .about-content {
+        margin-left: 2em;
+    }
+
+    .page_title {
+        margin-top: 78.8px;
+    }
+
+    .family_pic {
+        max-width: 300px;
+        float: right;
+        margin-left: 2em;
+
+    }
+
+    .music-container img {
+        min-width: 300px;
+        width: 30%;
+        padding: .4em .5em;
+    }
+    
+    .music-container a {
+        min-width: 300px;
+        width: 30%;
+        padding: .4em .5em;
+        transition: .4s;
+    }
+
+    .music-container a:hover {
+        opacity: .7;
+        transition: .4s;
+    }
+    
+    .music-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .most-vivid {
+        margin: 0 auto;
+        margin-top: 5em;
+        width: 80%;
+    }
+    .solo-projects {
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    .video {
+        text-align: center;
+        margin-top: 5em;
+    }
+
+    .video__bottom {
+        margin-bottom: 10em;
+    }
+
+    .index_container {
+        display: flex;
+        justify-content: end;
+        
+        
+    }
+
+    .index_link  {
+       text-decoration: none;
+       background-color: #222;
+       opacity: .8;
+       color: white;
+       position: fixed;
+       margin-left: -10px;
+    }
+
+    .index_container ul {
+        list-style: none;
+    }
+
+    .index_container a {
+        text-decoration: none;
+        color: white;
+        margin-right: 1em;
+    }
+
+    .blog_line {
+        margin: 4em 0;
+    }
+   
