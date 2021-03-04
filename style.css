@@ -227,10 +227,10 @@ nav a:hover {
     }
 
     .family_pic {
-        max-width: 300px;
-        float: right;
-        margin-left: 2em;
-
+        width: 300px;
+        height: 30%;
+        align-self: left;
+        margin-right: 2em;   
     }
 
     .music-container img {
