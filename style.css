@@ -301,8 +301,8 @@ nav a:hover {
         color: white;
         margin-right: 1em;
     }
-
-    .blog_line {
-        margin: 4em 0;
-    }
    
+    .blog_divider {
+        margin-top: 5em;
+        margin-bottom: 5em;
+    }
