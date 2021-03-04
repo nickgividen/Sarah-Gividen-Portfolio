@@ -218,8 +218,9 @@ nav a:hover {
         margin-top: 6em;
     }*/
 
-    .about-content {
-        margin-left: 2em;
+    .about_content {
+        line-height: 2em;
+        width: 40%;
     }
 
     .page_title {
