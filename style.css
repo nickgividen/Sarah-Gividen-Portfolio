@@ -306,3 +306,19 @@ nav a:hover {
         margin-top: 5em;
         margin-bottom: 5em;
     }
+
+@media (max-width: 667px) {
+    .family_pic {
+        margin: auto;
+        text-align: center;
+    }
+    .about_container {
+        display: block;
+    }
+    .about_content {
+        width: 100%;
+    }
+    nav a {
+        font-size: 1.2rem;
+    }
+}
